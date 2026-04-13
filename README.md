@@ -32,4 +32,18 @@ The application has an estimated capacity of **50 concurrent users**. Based on t
 To ensure accurate metrics and avoid UI resource consumption, all tests were executed via the command line:
 
 ```bash
+jmeter -n -t BlazeDemo_TestPlan.jmx -l result.csv
+```
+To generate HTML_Report
+```bash
 jmeter -n -t BlazeDemo_TestPlan.jmx -l results/test_results.jtl -e -o results
+```
+================================================================================
+
+👨‍💻 Author
+**Ahmed El-Sharkawi**  
+*Junior Test Automation Engineer*
+
+🔗 [LinkedIn Profile](https://www.linkedin.com/in/ahmed-el-sharkawi/)
+🔗 [GitHub Profile](https://github.com/Ahmed2015-22)
+
