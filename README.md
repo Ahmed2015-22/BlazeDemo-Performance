@@ -28,6 +28,15 @@ The application has an estimated capacity of **50 concurrent users**. Based on t
 | **Stress Testing**| 60 Users | Standard | Push the system beyond its capacity limit (50 VUs) to identify bottlenecks. |
 | **Soak Testing** | 30 Users | 3 Minutes | Monitor system stability, resource utilization, and memory leaks over an extended period. |
 
+### ⚡ Spike Testing (Ultimate Thread Group)
+To simulate sudden surges in traffic while maintaining a normal base load, a Spike Test was configured using the **Ultimate Thread Group** plugin. The scenario includes two distinct traffic spikes:
+
+| Schedule Record | Start Threads Count | Initial Delay (sec) | Startup Time (sec) | Hold Load For (sec) | Shutdown Time (sec) | Description |
+| :--- | :---: | :---: | :---: | :---: | :---: | :--- |
+| **1. Base Load** | 10 | 0 | 5 | 180 | 5 | Continuous normal load running for the entire 3 minutes. |
+| **2. Spike 1** | 40 | 30 | 1 | 10 | 1 | First surge starting after 30s (Total load reaches 50 VUs). |
+| **3. Spike 2** | 60 | 100 | 1 | 15 | 1 | Heavier surge starting after 100s (Total load reaches 70 VUs). |
+
 ## 💻 CLI Execution Command
 To ensure accurate metrics and avoid UI resource consumption, all tests were executed via the command line:
 
